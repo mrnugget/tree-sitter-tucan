@@ -22,7 +22,7 @@ module.exports = grammar({
         optional(
           seq(
             commaSep(
-              seq($.identifier, optional(field('type', seq(':', $._type))))
+              seq($.identifier, optional(field('type', seq(':', $.type))))
             ),
             optional(',')
           )
@@ -32,10 +32,10 @@ module.exports = grammar({
 
     return_type: $ => seq(
       '->',
-      $._type,
+      $.type,
     ),
 
-    _type: $ => choice(
+    type: $ => choice(
       'bool',
       'string',
       'int'

@@ -47,7 +47,8 @@ funk x(a, b, c) -> int {
       (identifier)
       (identifier)
       (identifier))
-    (return_type)
+    (return_type
+      (type))
     (block)))
 
 
@@ -65,7 +66,11 @@ funk x(a: int, b: bool, c: string) -> int {
     (identifier)
     (parameter_list
       (identifier)
+      (type)
       (identifier)
-      (identifier))
-    (return_type)
+      (type)
+      (identifier)
+      (type))
+    (return_type
+      (type))
     (block)))

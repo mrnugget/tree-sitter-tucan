@@ -12,7 +12,8 @@ funk x() -> int {
   (function_definition
     (identifier)
     (parameter_list)
-    (return_type)
+    (return_type
+      (type))
     (block
       (return_statement (number)))))
 
