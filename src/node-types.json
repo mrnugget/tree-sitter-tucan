@@ -3,7 +3,7 @@
     "type": "binary_expression",
     "named": true,
     "fields": {
-      "op": {
+      "operator": {
         "multiple": false,
         "required": true,
         "types": [

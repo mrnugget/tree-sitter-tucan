@@ -302,14 +302,14 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
 
 enum {
   field_name = 1,
-  field_op = 2,
+  field_operator = 2,
   field_type = 3,
 };
 
 static const char * const ts_field_names[] = {
   [0] = NULL,
   [field_name] = "name",
-  [field_op] = "op",
+  [field_operator] = "operator",
   [field_type] = "type",
 };
 
@@ -334,7 +334,7 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
     {field_type, 2},
     {field_type, 3},
   [6] =
-    {field_op, 1},
+    {field_operator, 1},
   [7] =
     {field_type, 2},
     {field_type, 3},

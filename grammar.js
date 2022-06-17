@@ -71,14 +71,14 @@ module.exports = grammar({
     ),
 
     binary_expression: $ => choice(
-      prec.left(2, seq($._expression, field('op', '-'), $._expression)),
-      prec.left(2, seq($._expression, field('op', '+'), $._expression)),
-      prec.left(1, seq($._expression, field('op', '>'), $._expression)),
-      prec.left(1, seq($._expression, field('op', '=>'), $._expression)),
-      prec.left(1, seq($._expression, field('op', '<'), $._expression)),
-      prec.left(1, seq($._expression, field('op', '<='), $._expression)),
-      prec.left(1, seq($._expression, field('op', '=='), $._expression)),
-      prec.left(1, seq($._expression, field('op', '!='), $._expression)),
+      prec.left(2, seq($._expression, field('operator', '-'), $._expression)),
+      prec.left(2, seq($._expression, field('operator', '+'), $._expression)),
+      prec.left(1, seq($._expression, field('operator', '>'), $._expression)),
+      prec.left(1, seq($._expression, field('operator', '=>'), $._expression)),
+      prec.left(1, seq($._expression, field('operator', '<'), $._expression)),
+      prec.left(1, seq($._expression, field('operator', '<='), $._expression)),
+      prec.left(1, seq($._expression, field('operator', '=='), $._expression)),
+      prec.left(1, seq($._expression, field('operator', '!='), $._expression)),
     ),
 
     identifier: $ => /[a-z]+/,
