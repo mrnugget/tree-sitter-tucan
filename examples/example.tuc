@@ -1,4 +1,4 @@
-funk x() -> int {
+funk x(b: int, a: bool, c: string) -> int {
   1 + 2;
   1 - 2;
   1 > 2;

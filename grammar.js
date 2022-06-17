@@ -49,7 +49,8 @@ module.exports = grammar({
 
     _statement: $ => choice(
       $.expression_statement,
-      $.return_statement
+      $.return_statement,
+      $.let_statement
       // TODO: other kinds of statements
     ),
 
@@ -64,6 +65,15 @@ module.exports = grammar({
       ';'
     ),
 
+    let_statement: $ => seq(
+      'let',
+      field('name', $.identifier),
+      optional(seq(':', $.type)),
+      field('operator', '='),
+      field('value', $._expression),
+      ';'
+    ),
+
     _expression: $ => choice(
       $.identifier,
       $.number,
@@ -71,14 +81,8 @@ module.exports = grammar({
     ),
 
     binary_expression: $ => choice(
-      prec.left(2, seq($._expression, field('operator', '-'), $._expression)),
-      prec.left(2, seq($._expression, field('operator', '+'), $._expression)),
-      prec.left(1, seq($._expression, field('operator', '>'), $._expression)),
-      prec.left(1, seq($._expression, field('operator', '=>'), $._expression)),
-      prec.left(1, seq($._expression, field('operator', '<'), $._expression)),
-      prec.left(1, seq($._expression, field('operator', '<='), $._expression)),
-      prec.left(1, seq($._expression, field('operator', '=='), $._expression)),
-      prec.left(1, seq($._expression, field('operator', '!='), $._expression)),
+      prec.left(2, seq(field('left', $._expression), field('operator', choice('-', '+')), field('right', $._expression))),
+      prec.left(1, seq(field('left', $._expression), field('operator', choice('>', '<', '=>', '<=', '==', '!=')), field('right', $._expression))),
     ),
 
     identifier: $ => /[a-z]+/,

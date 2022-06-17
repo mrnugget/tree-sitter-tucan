@@ -33,3 +33,36 @@ funk x() {
     (parameter_list)
     (block
       (expression_statement (binary_expression (number) (number))))))
+
+==================
+Let statements
+==================
+
+funk x() -> int {
+  let a = 1;
+  let b: int = 2;
+  let c: bool = a == b;
+}
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list)
+    (return_type
+      (type))
+    (block
+      (let_statement
+        (identifier)
+        (number))
+      (let_statement
+        (identifier)
+        (type)
+        (number))
+      (let_statement
+        (identifier)
+        (type)
+        (binary_expression
+          (identifier)
+          (identifier))))))
