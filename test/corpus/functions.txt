@@ -1,0 +1,71 @@
+==================
+No parameters, no return type
+==================
+
+funk x() {
+}
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list)
+    (block)))
+
+==================
+Parameters, no return type
+==================
+
+funk x(a, b, c) {
+}
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list
+      (identifier)
+      (identifier)
+      (identifier))
+    (block)))
+
+==================
+Parameters, return type
+==================
+
+funk x(a, b, c) -> int {
+}
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list
+      (identifier)
+      (identifier)
+      (identifier))
+    (return_type)
+    (block)))
+
+
+==================
+Parameters with types, return type
+==================
+
+funk x(a: int, b: bool, c: string) -> int {
+}
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list
+      (identifier)
+      (identifier)
+      (identifier))
+    (return_type)
+    (block)))

@@ -11,7 +11,7 @@ module.exports = grammar({
 
     function_definition: $ => seq(
       'funk',
-      $.identifier,
+      field('name', $.identifier),
       $.parameter_list,
       optional($.return_type),
       $.block
@@ -19,7 +19,14 @@ module.exports = grammar({
 
     parameter_list: $ => seq(
       '(',
-       // TODO: parameters
+        optional(
+          seq(
+            commaSep(
+              seq($.identifier, optional(field('type', seq(':', $._type))))
+            ),
+            optional(',')
+          )
+        ),
       ')'
     ),
 
@@ -79,3 +86,10 @@ module.exports = grammar({
     number: $ => /\d+/
   }
 });
+
+function commaSep1(rule) {
+  return seq(rule, repeat(seq(',', rule)))
+}
+function commaSep(rule) {
+  return optional(commaSep1(rule))
+}
