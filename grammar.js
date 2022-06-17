@@ -20,14 +20,13 @@ module.exports = grammar({
     parameter_list: $ => seq(
       '(',
         optional(
-          seq(
-            commaSep(
-              seq($.identifier, optional(field('type', seq(':', $.type))))
-            ),
-            optional(',')
-          )
+          seq(commaSep( $.parameter), optional(','))
         ),
       ')'
+    ),
+
+    parameter: $ => seq(
+      $.identifier, optional(field('type', seq(':', $.type)))
     ),
 
     return_type: $ => seq(

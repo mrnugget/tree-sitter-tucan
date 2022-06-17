@@ -214,7 +214,7 @@
     }
   },
   {
-    "type": "parameter_list",
+    "type": "parameter",
     "named": true,
     "fields": {
       "type": {
@@ -233,11 +233,26 @@
       }
     },
     "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "parameter_list",
+    "named": true,
+    "fields": {},
+    "children": {
       "multiple": true,
       "required": false,
       "types": [
         {
-          "type": "identifier",
+          "type": "parameter",
           "named": true
         }
       ]

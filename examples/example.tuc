@@ -1,5 +1,11 @@
-funk x(b: int, a: bool, c: string) -> int {
-  let a: int = 5;
+funk foo() -> bool {
+  return 1;
+}
+
+funk x(a: int, b: bool, c: string) -> int {
+  let a: int = 18;
+  let b: bool = a == 10;
+  let c: bool = a != b;
   1 + 2;
   1 - 2;
   1 > 2;

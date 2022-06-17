@@ -26,9 +26,9 @@ funk x(a, b, c) {
   (function_definition
     (identifier)
     (parameter_list
-      (identifier)
-      (identifier)
-      (identifier))
+      (parameter (identifier))
+      (parameter (identifier))
+      (parameter (identifier)))
     (block)))
 
 ==================
@@ -44,9 +44,9 @@ funk x(a, b, c) -> int {
   (function_definition
     (identifier)
     (parameter_list
-      (identifier)
-      (identifier)
-      (identifier))
+      (parameter (identifier))
+      (parameter (identifier))
+      (parameter (identifier)))
     (return_type
       (type))
     (block)))
@@ -65,12 +65,9 @@ funk x(a: int, b: bool, c: string) -> int {
   (function_definition
     (identifier)
     (parameter_list
-      (identifier)
-      (type)
-      (identifier)
-      (type)
-      (identifier)
-      (type))
+      (parameter (identifier) (type))
+      (parameter (identifier) (type))
+      (parameter (identifier) (type)))
     (return_type
       (type))
     (block)))
