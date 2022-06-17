@@ -27,4 +27,5 @@
 [
   "funk"
   "return"
+  "let"
 ] @keyword

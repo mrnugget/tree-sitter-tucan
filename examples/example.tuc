@@ -1,4 +1,5 @@
 funk x(b: int, a: bool, c: string) -> int {
+  let a: int = 5;
   1 + 2;
   1 - 2;
   1 > 2;
