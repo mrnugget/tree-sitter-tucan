@@ -5,6 +5,7 @@
 
 ; Identifiers
 
+(parameter (identifier) @parameter)
 (type) @type
 (identifier) @variable
 (number) @number
