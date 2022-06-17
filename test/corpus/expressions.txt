@@ -1,0 +1,31 @@
+==================
+Expression statements
+==================
+
+funk x() {
+  1 + 2;
+  1 - 2;
+  1 > 2;
+  1 < 2;
+  1 => 2;
+  1 <= 2;
+  1 == 2;
+  1 != 2;
+}
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list)
+    (block
+      (expression_statement (binary_expression (number) (number)))
+      (expression_statement (binary_expression (number) (number)))
+      (expression_statement (binary_expression (number) (number)))
+      (expression_statement (binary_expression (number) (number)))
+      (expression_statement (binary_expression (number) (number)))
+      (expression_statement (binary_expression (number) (number)))
+      (expression_statement (binary_expression (number) (number)))
+      (expression_statement (binary_expression (number) (number)))
+      )))

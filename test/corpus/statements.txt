@@ -1,0 +1,34 @@
+==================
+Return statements
+==================
+
+funk x() -> int {
+  return 1;
+}
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list)
+    (return_type)
+    (block
+      (return_statement (number)))))
+
+==================
+Expression statements
+==================
+
+funk x() {
+  1 + 2;
+}
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list)
+    (block
+      (expression_statement (binary_expression (number) (number))))))
