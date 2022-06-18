@@ -17,6 +17,7 @@
 ; Expressions
 (identifier) @variable
 (number) @number
+(string) @string
 
 (true) @boolean
 (false) @boolean

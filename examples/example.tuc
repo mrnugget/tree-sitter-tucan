@@ -1,4 +1,7 @@
-funk foo() -> bool { return 1; }
+funk hello_world() -> bool {
+  print_string("hello world!");
+  return true;
+}
 
 funk magic_funk(a: int, b: int, c: int, d: bool, e: bool) -> bool {
   let res = a + b + c;
@@ -10,6 +13,7 @@ funk x(a: int, b: bool, c: string) -> int {
   let b: bool = a == 10;
   let c: bool = a != b;
   let d = true != false;
+  let s = "foobar" == "foo bar";
 
   1 + 2;
   1 - 2;
