@@ -24,5 +24,31 @@ funk x(a: int, b: bool, c: string) -> int {
   let result = foo();
   let resultTwo = foo(1, 2, a, b, c);
 
+  if (resultTwo) {
+    print_num(a);
+  } else {
+    print_num(a);
+  };
+
   return 1;
+}
+
+funk loopyboi() {
+  for (;;) {
+  }
+  for (;;) {
+    print_num(i);
+  }
+  for (let i = 0;;) {
+    print_num(i);
+  }
+  for (let i = 0; i < 10; ) {
+    print_num(i);
+  }
+  for (let i = 0; i < 10; i = i + 1) {
+    print_num(i);
+  }
+  for (let i = 0; ; i = i + 1) {
+    print_num(i);
+  }
 }

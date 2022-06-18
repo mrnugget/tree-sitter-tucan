@@ -66,3 +66,58 @@ funk x() -> int {
         (binary_expression
           (identifier)
           (identifier))))))
+
+
+==================
+For loops
+==================
+
+funk x() -> int {
+  for (;;) { }
+  for (;;) { print_num(i); }
+  for (let i = 0;;) { print_num(i); }
+  for (let i = 0; i < 10; ) { print_num(i); }
+  for (let i = 0; i < 10; i = i + 1) { print_num(i); }
+  for (let i = 0; ; i = i + 1) { print_num(i); }
+}
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list)
+    (return_type
+      (type))
+    (block
+
+      (for_loop_statement
+        (block))
+
+      (for_loop_statement
+        (block
+          (expression_statement (call_expression (identifier) (argument_list (identifier))))))
+
+      (for_loop_statement
+        (let_statement (identifier) (number))
+        (block
+          (expression_statement (call_expression (identifier) (argument_list (identifier))))))
+
+      (for_loop_statement
+        (let_statement (identifier) (number))
+        (binary_expression (identifier) (number))
+        (block
+          (expression_statement (call_expression (identifier) (argument_list (identifier))))))
+
+      (for_loop_statement
+        (let_statement (identifier) (number))
+        (binary_expression (identifier) (number))
+        (assignment_expression (identifier) (binary_expression (identifier) (number)))
+        (block
+          (expression_statement (call_expression (identifier) (argument_list (identifier))))))
+
+      (for_loop_statement
+        (let_statement (identifier) (number))
+        (assignment_expression (identifier) (binary_expression (identifier) (number)))
+        (block
+          (expression_statement (call_expression (identifier) (argument_list (identifier)))))))))
