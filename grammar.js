@@ -2,13 +2,7 @@ module.exports = grammar({
   name: 'tucan',
 
   rules: {
-    source_file: $ => repeat($._definition),
-
-    _definition: $ =>
-      choice(
-        $.function_definition
-        // TODO: other kinds of definitions
-      ),
+    source_file: $ => repeat($.function_definition),
 
     function_definition: $ =>
       seq(

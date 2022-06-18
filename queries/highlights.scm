@@ -34,7 +34,11 @@
   "funk"
   "return"
   "let"
+  "for"
+  "if"
+  "else"
 ] @keyword
 
 ; Punctuation
 ["(" ")" "{" "}"]  @punctuation.bracket
+["," ":" ";"] @punctuation.delimiter
