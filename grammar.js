@@ -20,7 +20,7 @@ module.exports = grammar({
     parameter_list: $ => seq(
       '(',
         optional(
-          seq(commaSep( $.parameter), optional(','))
+          seq(commaSep($.parameter), optional(','))
         ),
       ')'
     ),
@@ -74,17 +74,42 @@ module.exports = grammar({
     ),
 
     _expression: $ => choice(
+      $.true,
+      $.false,
       $.identifier,
       $.number,
+      $.assignment_expression,
       $.binary_expression,
+      $.call_expression,
     ),
 
     binary_expression: $ => choice(
-      prec.left(2, seq(field('left', $._expression), field('operator', choice('-', '+')), field('right', $._expression))),
-      prec.left(1, seq(field('left', $._expression), field('operator', choice('>', '<', '=>', '<=', '==', '!=')), field('right', $._expression))),
+      prec.left(4, seq(field('left', $._expression), field('operator', choice('-', '+')), field('right', $._expression))),
+      prec.left(3, seq(field('left', $._expression), field('operator', choice('>', '<', '=>', '<=', '==', '!=')), field('right', $._expression))),
     ),
 
-    identifier: $ => /[a-z]+/,
+    assignment_expression: $ =>
+      prec.left(2, seq(field('left', $._expression), field('operator', '='), field('right', $._expression))),
+
+    call_expression: $ => seq(
+      field('target', $.identifier),
+      field('args', $.argument_list),
+    ),
+
+    argument_list: $ => seq(
+      '(',
+        optional(
+          seq(commaSep($._expression), optional(','))
+        ),
+      ')'
+    ),
+
+    _boolean_literal: $ => choice($.true, $.false),
+
+    true: $ => 'true',
+    false: $ => 'false',
+
+    identifier: $ => /[a-z_]+/,
 
     number: $ => /\d+/
   }
@@ -93,6 +118,7 @@ module.exports = grammar({
 function commaSep1(rule) {
   return seq(rule, repeat(seq(',', rule)))
 }
+
 function commaSep(rule) {
   return optional(commaSep1(rule))
 }

@@ -1,5 +1,28 @@
 ==================
-Expression statements
+Literals
+==================
+
+funk x() {
+  1;
+  a;
+  true;
+  false;
+}
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list)
+    (block
+      (expression_statement (number))
+      (expression_statement (identifier))
+      (expression_statement (true))
+      (expression_statement (false)))))
+
+==================
+Binary expressions
 ==================
 
 funk x() {
@@ -27,5 +50,65 @@ funk x() {
       (expression_statement (binary_expression (number) (number)))
       (expression_statement (binary_expression (number) (number)))
       (expression_statement (binary_expression (number) (number)))
-      (expression_statement (binary_expression (number) (number)))
-      )))
+      (expression_statement (binary_expression (number) (number))))))
+
+==================
+Assignment expressions
+==================
+
+funk x() {
+  a = 5 + 5;
+}
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list)
+    (block
+      (expression_statement (assignment_expression
+                              (identifier) (binary_expression (number) (number)))))))
+
+==================
+Call expression without args
+==================
+
+funk x() {
+  print_num();
+}
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list)
+    (block
+      (expression_statement (call_expression (identifier) (argument_list))))))
+
+==================
+Call expression with args
+==================
+
+funk x() {
+  print_num(1);
+  print_num(1, 2, 3, 4);
+  print_num(a, b, 3, 4 + 1);
+}
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list)
+    (block
+      (expression_statement (call_expression (identifier) (argument_list (number))))
+      (expression_statement (call_expression (identifier) (argument_list (number) (number) (number) (number))))
+      (expression_statement
+        (call_expression (identifier) (argument_list
+                                        (identifier)
+                                        (identifier)
+                                        (number)
+                                        (binary_expression (number) (number))))))))
