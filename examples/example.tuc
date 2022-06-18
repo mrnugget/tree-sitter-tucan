@@ -1,8 +1,6 @@
-funk foo() -> bool {
-  return 1;
-}
+funk foo() -> bool { return 1; }
 
-funk magic(a: int, b: int, c: int, d: bool, e: bool) -> bool {
+funk magic_funk(a: int, b: int, c: int, d: bool, e: bool) -> bool {
   let res = a + b + c;
   return res == d == e;
 }

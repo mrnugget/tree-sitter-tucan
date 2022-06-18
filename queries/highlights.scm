@@ -10,9 +10,16 @@
 ; Identifiers
 
 (parameter (identifier) @parameter)
+
+; Types
 (type) @type
+
+; Expressions
 (identifier) @variable
 (number) @number
+
+(true) @boolean
+(false) @boolean
 
 ; Operators
 
@@ -30,14 +37,18 @@
 
 ; Keywords
 
+"for" @repeat
+
+"funk" @keyword.function
+"return" @keyword.return
 [
-  "funk"
-  "return"
   "let"
-  "for"
-  "if"
-  "else"
 ] @keyword
+
+[
+  "else"
+  "if"
+ ] @conditional
 
 ; Punctuation
 ["(" ")" "{" "}"]  @punctuation.bracket
