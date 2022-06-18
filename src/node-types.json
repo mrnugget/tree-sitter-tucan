@@ -36,6 +36,10 @@
           "named": true
         },
         {
+          "type": "string",
+          "named": true
+        },
+        {
           "type": "true",
           "named": true
         }
@@ -76,6 +80,10 @@
           },
           {
             "type": "number",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           },
           {
@@ -127,6 +135,10 @@
             "named": true
           },
           {
+            "type": "string",
+            "named": true
+          },
+          {
             "type": "true",
             "named": true
           }
@@ -168,6 +180,10 @@
           },
           {
             "type": "number",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           },
           {
@@ -244,6 +260,10 @@
           },
           {
             "type": "number",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           },
           {
@@ -344,6 +364,10 @@
           "named": true
         },
         {
+          "type": "string",
+          "named": true
+        },
+        {
           "type": "true",
           "named": true
         }
@@ -397,6 +421,10 @@
             "named": true
           },
           {
+            "type": "string",
+            "named": true
+          },
+          {
             "type": "true",
             "named": true
           }
@@ -432,6 +460,10 @@
           },
           {
             "type": "number",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           },
           {
@@ -533,6 +565,10 @@
             "named": true
           },
           {
+            "type": "string",
+            "named": true
+          },
+          {
             "type": "true",
             "named": true
           }
@@ -604,6 +640,10 @@
           },
           {
             "type": "number",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           },
           {
@@ -706,6 +746,10 @@
           "named": true
         },
         {
+          "type": "string",
+          "named": true
+        },
+        {
           "type": "true",
           "named": true
         }
@@ -743,12 +787,21 @@
     }
   },
   {
+    "type": "string",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "type",
     "named": true,
     "fields": {}
   },
   {
     "type": "!=",
+    "named": false
+  },
+  {
+    "type": "\"",
     "named": false
   },
   {

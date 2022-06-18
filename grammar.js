@@ -69,6 +69,7 @@ module.exports = grammar({
         $.false,
         $.identifier,
         $.number,
+        $.string,
         $.assignment_expression,
         $.binary_expression,
         $.call_expression
@@ -128,6 +129,8 @@ module.exports = grammar({
     identifier: $ => /[a-zA-Z_]+\d*/,
 
     number: $ => /\d+/,
+
+    string: $ => seq('"', /[^"]*/, '"'),
   },
 });
 

@@ -30,6 +30,7 @@ funk x() {
   a;
   true;
   false;
+  "tucan true false 1 2 3 4 {} != < if for loop";
 }
 
 ---
@@ -42,7 +43,9 @@ funk x() {
       (expression_statement (number))
       (expression_statement (identifier))
       (expression_statement (true))
-      (expression_statement (false)))))
+      (expression_statement (false))
+      (expression_statement (string))
+      )))
 
 ==================
 Binary expressions
@@ -57,6 +60,8 @@ funk x() {
   1 <= 2;
   1 == 2;
   1 != 2;
+  "a" == "a";
+  "foo bar" == "bar foo";
 }
 
 ---
@@ -73,7 +78,9 @@ funk x() {
       (expression_statement (binary_expression (number) (number)))
       (expression_statement (binary_expression (number) (number)))
       (expression_statement (binary_expression (number) (number)))
-      (expression_statement (binary_expression (number) (number))))))
+      (expression_statement (binary_expression (number) (number)))
+      (expression_statement (binary_expression (string) (string)))
+      (expression_statement (binary_expression (string) (string))))))
 
 ==================
 Assignment expressions
@@ -117,7 +124,7 @@ Call expression with args
 funk x() {
   print_num(1);
   print_num(1, 2, 3, 4);
-  print_num(a, b, 3, 4 + 1);
+  print_num(a, b, 3, 4 + 1, "foobar");
 }
 
 ---
@@ -134,7 +141,8 @@ funk x() {
                                         (identifier)
                                         (identifier)
                                         (number)
-                                        (binary_expression (number) (number))))))))
+                                        (binary_expression (number) (number))
+                                        (string)))))))
 
 
 ==================
