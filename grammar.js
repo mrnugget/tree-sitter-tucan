@@ -125,7 +125,7 @@ module.exports = grammar({
     true: $ => 'true',
     false: $ => 'false',
 
-    identifier: $ => /[a-z_]+/,
+    identifier: $ => /[a-zA-Z_]+\d*/,
 
     number: $ => /\d+/,
   },

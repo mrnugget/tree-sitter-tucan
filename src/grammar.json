@@ -738,7 +738,7 @@
     },
     "identifier": {
       "type": "PATTERN",
-      "value": "[a-z_]+"
+      "value": "[a-zA-Z_]+\\d*"
     },
     "number": {
       "type": "PATTERN",

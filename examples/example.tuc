@@ -11,6 +11,7 @@ funk x(a: int, b: bool, c: string) -> int {
   let a: int = 18;
   let b: bool = a == 10;
   let c: bool = a != b;
+  let d = true != false;
 
   1 + 2;
   1 - 2;
