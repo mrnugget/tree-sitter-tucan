@@ -2,10 +2,16 @@ funk foo() -> bool {
   return 1;
 }
 
+funk magic(a: int, b: int, c: int, d: bool, e: bool) -> bool {
+  let res = a + b + c;
+  return res == d == e;
+}
+
 funk x(a: int, b: bool, c: string) -> int {
   let a: int = 18;
   let b: bool = a == 10;
   let c: bool = a != b;
+
   1 + 2;
   1 - 2;
   1 > 2;
@@ -14,5 +20,9 @@ funk x(a: int, b: bool, c: string) -> int {
   1 <= 2;
   1 == 2;
   1 != 2;
+
+  let result = foo();
+  let resultTwo = foo(1, 2, a, b, c);
+
   return 1;
 }

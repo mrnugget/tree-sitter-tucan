@@ -2,12 +2,16 @@
 No parameters, no return type
 ==================
 
-funk x() {
-}
+funk x() { }
+funk magic_func() { }
 
 ---
 
 (source_file
+  (function_definition
+    (identifier)
+    (parameter_list)
+    (block))
   (function_definition
     (identifier)
     (parameter_list)
