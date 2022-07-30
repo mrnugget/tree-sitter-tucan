@@ -16,5 +16,13 @@
     "eslint-plugin-tree-sitter": "^0.0.1",
     "prettier": "^2.7.1",
     "tree-sitter-cli": "^0.20.6"
-  }
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.tucan",
+      "file-types": [
+        "tuc"
+      ]
+    }
+  ]
 }
