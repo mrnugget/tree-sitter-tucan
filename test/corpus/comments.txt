@@ -1,0 +1,23 @@
+==================
+Line comments
+==================
+
+// comment 1
+funk x() -> int {
+  // comment 2
+  return 1; // comment 3
+}
+
+---
+
+(source_file
+  (comment)
+  (function_definition
+    (identifier)
+    (parameter_list)
+    (return_type
+      (type))
+    (block
+      (comment)
+      (return_statement (number))
+      (comment))))

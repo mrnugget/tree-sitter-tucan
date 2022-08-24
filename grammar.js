@@ -1,6 +1,8 @@
 module.exports = grammar({
   name: 'tucan',
 
+  extras: $ => [/\s/, $.comment],
+
   rules: {
     source_file: $ => repeat($.function_definition),
 
@@ -35,6 +37,10 @@ module.exports = grammar({
         ),
         optional(';')
       ),
+
+    comment: $ => $._line_comment,
+
+    _line_comment: $ => token(seq('//', /.*/)),
 
     expression_statement: $ => $._expression,
 

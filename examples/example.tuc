@@ -3,8 +3,11 @@ funk hello_world() -> bool {
   return true;
 }
 
+// magic_funk is a magical function
 funk magic_funk(a: int, b: int, c: int, d: bool, e: bool) -> bool {
+  // comment here
   let res = a + b + c;
+  // comment there
   return res == d == e;
 }
 
@@ -13,6 +16,7 @@ funk x(a: int, b: bool, c: string) -> int {
   let b: bool = a == 10;
   let c: bool = a != b;
   let d = true != false;
+  // comment
   let s = "foobar" == "foo bar";
 
   1 + 2;
