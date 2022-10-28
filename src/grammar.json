@@ -614,17 +614,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "if"
-            },
-            {
-              "type": "STRING",
-              "value": "assuming"
-            }
-          ]
+          "type": "STRING",
+          "value": "if"
         },
         {
           "type": "STRING",
@@ -657,17 +648,8 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": "else"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "otherwise"
-                    }
-                  ]
+                  "type": "STRING",
+                  "value": "else"
                 },
                 {
                   "type": "FIELD",
