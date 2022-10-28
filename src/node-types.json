@@ -866,6 +866,10 @@
     "named": false
   },
   {
+    "type": "assuming",
+    "named": false
+  },
+  {
     "type": "bool",
     "named": false
   },
@@ -904,6 +908,10 @@
   {
     "type": "number",
     "named": true
+  },
+  {
+    "type": "otherwise",
+    "named": false
   },
   {
     "type": "return",

@@ -116,12 +116,12 @@ module.exports = grammar({
 
     if_expression: $ =>
       seq(
-        'if',
+        choice('if', 'assuming'),
         '(',
         field('condition', $._expression),
         ')',
         field('consequence', $.block),
-        optional(seq('else', field('alternative', $.block)))
+        optional(seq(choice('else', 'otherwise'), field('alternative', $.block)))
       ),
 
     argument_list: $ =>
